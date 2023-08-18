@@ -19,7 +19,7 @@ const page = () => {
         <h2 className="mt-6 text-align text-3xl font-bold tracking-tight text-gray-900">Sign in to your account</h2>
       </div>
 
-      <Button>Google</Button>
+      <Button onClick={loginWithGoogle}>Google</Button>
     </div>
   </div>
 }
