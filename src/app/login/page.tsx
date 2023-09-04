@@ -1,5 +1,5 @@
 'use client'
-import { Button } from '@material-tailwind/react';
+import { IconButton } from '@material-tailwind/react';
 import { signIn} from 'next-auth/react'
 import { toast } from 'react-hot-toast';
 
@@ -19,7 +19,10 @@ const page = () => {
         <h2 className="mt-6 text-align text-3xl font-bold tracking-tight text-gray-900">Sign in to your account</h2>
       </div>
 
-      <Button onClick={loginWithGoogle}>Google</Button>
+      <IconButton onClick={loginWithGoogle}>
+        <i className="fab fa-google text-lg" />
+        Google
+      </IconButton>
     </div>
   </div>
 }
