@@ -1,5 +1,5 @@
 'use client'
-import { IconButton } from '@material-tailwind/react';
+import { Button } from '@material-tailwind/react';
 import { signIn} from 'next-auth/react'
 import { toast } from 'react-hot-toast';
 
@@ -8,6 +8,7 @@ const page = () => {
     try {
       await signIn('google');
     } catch (error) {
+      console.log(error)
       toast.error('Something went wrong with your sign in.')
     }
     
@@ -19,10 +20,7 @@ const page = () => {
         <h2 className="mt-6 text-align text-3xl font-bold tracking-tight text-gray-900">Sign in to your account</h2>
       </div>
 
-      <IconButton onClick={loginWithGoogle}>
-        <i className="fab fa-google text-lg" />
-        Google
-      </IconButton>
+      <Button onClick={loginWithGoogle}>Google</Button>
     </div>
   </div>
 }
