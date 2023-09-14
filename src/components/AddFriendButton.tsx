@@ -37,7 +37,6 @@ export const AddFriendButton = () => {
         }
     }
     const onSubmit = (data: FormData) => {
-        console.log('123')
         addFriend(data.email);
     }
     return <form onSubmit={handleSubmit(onSubmit)} className='max-w-sm'>

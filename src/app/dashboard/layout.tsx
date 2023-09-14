@@ -5,6 +5,7 @@ import {notFound} from "next/navigation";
 import {authOptions} from "@/lib/auth";
 import {getServerSession} from "next-auth";
 import {fetchRedis} from "@/helpers/redis";
+import FriendRequestSidebarOptions from "@/components/FriendRequestSidebarOptions";
 
 interface LayoutProps {
     children: ReactNode
@@ -76,11 +77,10 @@ const Layout = async ({children}: LayoutProps) => {
                             })}
 
                             <li>
-                                {/*<FriendRequestSidebarOptions*/}
-                                {/*    sessionId={session.user.id}*/}
-                                {/*    initialUnseenRequestCount={unseenRequestCount}*/}
-                                {/*/>*/}
-                                abcdefghijklmn
+                                <FriendRequestSidebarOptions
+                                    sessionId={session.user.id}
+                                    initialUnseenRequestCount={unseenRequestCount}
+                                />
                             </li>
                         </ul>
                     </li>
