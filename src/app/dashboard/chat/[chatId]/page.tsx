@@ -5,6 +5,8 @@ import { getServerSession } from 'next-auth';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import toast from 'react-hot-toast';
+import Messages from '@/components/Messages';
+import ChatInput from '@/components/ChatInput';
 
 export async function generateMetadata({
   params,
@@ -75,7 +77,7 @@ const page = async ({ params }: PageProps) => {
     `user:${chatPartnerId}`
   )) as string;
   const chatPartner = JSON.parse(chatPartnerRaw) as User;
-  const initialMessages = await getChatMessages(chatId);
+  const initialMessages = (await getChatMessages(chatId)) as Message[];
 
   return (
     <div className="flex-1 justify-between flex flex-col h-full max-h-[calc(100vh-6rem)]">
@@ -105,14 +107,14 @@ const page = async ({ params }: PageProps) => {
         </div>
       </div>
 
-      {/* <Messages
+      <Messages
         chatId={chatId}
         chatPartner={chatPartner}
         sessionImg={session.user.image}
         sessionId={session.user.id}
         initialMessages={initialMessages}
       />
-      <ChatInput chatId={chatId} chatPartner={chatPartner} /> */}
+      <ChatInput chatId={chatId} chatPartner={chatPartner} />
     </div>
   );
 };

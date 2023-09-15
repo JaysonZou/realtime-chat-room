@@ -1,9 +1,10 @@
-import { authOptions } from "@/lib/auth";
-import { getServerSession } from "next-auth";
+import { authOptions } from '@/lib/auth';
+import { getServerSession } from 'next-auth';
 
-const Page = () => {
-  const session = getServerSession(authOptions)
+const Page = async () => {
+  const session = await getServerSession(authOptions);
+  console.log(typeof session, 'session');
   return <div>{JSON.stringify(session)}</div>;
-}
+};
 
 export default Page;
