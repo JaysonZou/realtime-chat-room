@@ -29,6 +29,12 @@ const sidebarOptions: SidebarOption[] = [
     href: '/dashboard/add',
     Icon: 'UserPlus',
   },
+  {
+    id: 2,
+    name: 'Agile Estimating',
+    href: '/dashboard/agileEstimating',
+    Icon: 'Presentation',
+  },
 ];
 
 const Layout = async ({ children }: LayoutProps) => {
@@ -45,7 +51,7 @@ const Layout = async ({ children }: LayoutProps) => {
   ).length;
 
   return (
-    <div className={`w-full flex h-screen`}>
+    <div className={`w-full flex h-screen bg-[#f8fafc]`}>
       <div
         className="flex h-full w-full max-w-xs grow flex-col gap-y-5 overflow-y-auto border-r
           border-gray-200 bg-white px-6"
