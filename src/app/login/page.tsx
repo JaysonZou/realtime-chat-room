@@ -7,6 +7,7 @@ import { signIn } from 'next-auth/react';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
+import { z } from 'zod';
 
 type FormData = z.infer<typeof addFriendValidator>;
 const Page = () => {
